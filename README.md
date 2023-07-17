@@ -15,15 +15,15 @@ Flow unifies today's batch and streaming paradigms so that your systems
 
 With a Flow pipeline, you:
 
--   📷 **Capture** data from your systems, services, and SaaS into _collections_:
-    millisecond-latency datasets that are stored as regular files of JSON data,
-    right in your cloud storage bucket.
+- 📷 **Capture** data from your systems, services, and SaaS into _collections_:
+  millisecond-latency datasets that are stored as regular files of JSON data,
+  right in your cloud storage bucket.
 
--   🎯 **Materialize** a collection as a view within another system,
-    such as a database, key/value store, Webhook API, or pub/sub service.
+- 🎯 **Materialize** a collection as a view within another system,
+  such as a database, key/value store, Webhook API, or pub/sub service.
 
--   🌊 **Derive** new collections by transforming from other collections, using
-    the full gamut of stateful stream workflow, joins, and aggregations — in real time.
+- 🌊 **Derive** new collections by transforming from other collections, using
+  the full gamut of stateful stream workflow, joins, and aggregations — in real time.
 
 ![Workflow Overview](site/docs/concepts/at-a-glance.png)
 
@@ -33,24 +33,24 @@ Flow combines a low-code UI for essential workflows and a CLI for fine-grain con
 Together, the two interfaces comprise Flow's unified platform.
 You can switch seamlessly between them as you build and refine your pipelines, and collaborate with a wider breadth of data stakeholders.
 
-* The UI-based web application is at **[dashboard.estuary.dev](https://dashboard.estuary.dev)**.
-* The **flowctl CLI** can be downloaded per [these instructions](https://docs.estuary.dev/getting-started/installation/#get-started-with-the-flow-cli).
+- The UI-based web application is at **[dashboard.estuary.dev](https://dashboard.estuary.dev)**.
+- The **flowctl CLI** can be downloaded per [these instructions](https://docs.estuary.dev/getting-started/installation/#get-started-with-the-flow-cli).
 
 ➡️ **Sign up for a free Flow account [here](https://go.estuary.dev/sign-up).**
 
-*See the [BSL license](./LICENSE-BSL) for information on using Flow outside the managed offering.*
+_See the [BSL license](./LICENSE-BSL) for information on using Flow outside the managed offering._
 
 ## Resources
 
--   📖 [Flow documentation](https://docs.estuary.dev/)
+- 📖 [Flow documentation](https://docs.estuary.dev/)
 
--   🧐 **Examples and tutorials**
-    - [Documentation tutorials](https://docs.estuary.dev/getting-started/tutorials/)
-    - Blog & GitHub tutorials
-       - [Continuous materialized view in Postgres](https://www.estuary.dev/how-to-create-a-real-time-materialized-view-in-postgresql/)
-       - [Kafka to Hasura GraphQL pipeline](https://www.estuary.dev/how-to-connect-kafka-to-hasura-graphql/)
-       - [Flow transformations at http endpoints](https://github.com/estuary/flow-cf-workers-example)
-    - Many [examples/](examples/) are available in this repo, covering a range of use cases and techniques.
+- 🧐 **Examples and tutorials**
+  - [Documentation tutorials](https://docs.estuary.dev/getting-started/tutorials/)
+  - Blog & GitHub tutorials
+    - [Continuous materialized view in Postgres](https://www.estuary.dev/how-to-create-a-real-time-materialized-view-in-postgresql/)
+    - [Kafka to Hasura GraphQL pipeline](https://www.estuary.dev/how-to-connect-kafka-to-hasura-graphql/)
+    - [Flow transformations at http endpoints](https://github.com/estuary/flow-cf-workers-example)
+  - Many [examples/](examples/) are available in this repo, covering a range of use cases and techniques.
 
 ## Support
 
@@ -90,12 +90,14 @@ and seamlessly transition to low-latency streaming on reaching the present.
 
 Flow mixes a variety of architectural techniques to achieve great throughput without adding latency:
 
--   Optimistic pipelining, using the natural back-pressure of systems to which data is committed.
--   Leveraging `reduce` annotations to group collection documents by key wherever possible,
-    in memory, before writing them out.
--   Co-locating derivation states (_registers_) with derivation compute:
-    registers live in an embedded RocksDB that's replicated for durability and machine re-assignment.
-    They update in memory and only write out at transaction boundaries.
--   Vectorizing the work done in external Remote Procedure Calls (RPCs) and even process-internal operations.
--   Marrying the development velocity of Go with the raw performance of Rust, using a zero-copy
-    [CGO service channel](https://github.com/estuary/flow/commit/0fc0ff83fc5c58e01a09a053419f811d4460776e).
+- Optimistic pipelining, using the natural back-pressure of systems to which data is committed.
+- Leveraging `reduce` annotations to group collection documents by key wherever possible,
+  in memory, before writing them out.
+- Co-locating derivation states (_registers_) with derivation compute:
+  registers live in an embedded RocksDB that's replicated for durability and machine re-assignment.
+  They update in memory and only write out at transaction boundaries.
+- Vectorizing the work done in external Remote Procedure Calls (RPCs) and even process-internal operations.
+- Marrying the development velocity of Go with the raw performance of Rust, using a zero-copy
+  [CGO service channel](https://github.com/estuary/flow/commit/0fc0ff83fc5c58e01a09a053419f811d4460776e).
+
+Test test test
